@@ -678,6 +678,7 @@ register sscratch : xlenbits
 register sepc     : xlenbits
 register scause   : Mcause
 register stval    : xlenbits
+register stid     : xlenbits
 
 /*
  * S-mode address translation and protection (satp) layout.

@@ -51,6 +51,8 @@ mapping clause csr_name_map = 0x143  <-> "stval"
 mapping clause csr_name_map = 0x144  <-> "sip"
 /* supervisor protection and translation */
 mapping clause csr_name_map = 0x180  <-> "satp"
+/* supervisor pure data csrs */
+mapping clause csr_name_map = 0x541  <-> "stid"
 /* supervisor envcfg */
 mapping clause csr_name_map = 0x10A  <-> "senvcfg"
 /* machine information registers */
