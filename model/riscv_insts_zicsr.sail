@@ -70,6 +70,9 @@ function readCSR csr : csreg -> xlenbits = {
     (0xC21, _) => vtype.bits,
     (0xC22, _) => vlenb,
 
+    /* user mode pure data CSRs */
+    (0xC30,  _) => stid, // read stid
+
     /* trigger/debug */
     (0x7a0,  _) => ~(tselect),  /* this indicates we don't have any trigger support */
 
@@ -173,6 +176,8 @@ function writeCSR (csr : csreg, value : xlenbits) -> unit = {
 
     /* user mode: seed (entropy source). writes are ignored */
     (0x015,  _) => write_seed_csr(),
+    /* user mode pure data csrs. writes are ignored */
+    (0xC30,  _) => write_seed_csr(),
 
     /* vector */
     (0x008, _) => { let vstart_length = get_vlen_pow(); vstart = zero_extend(16, value[(vstart_length - 1) .. 0]); Some(zero_extend(vstart)) },

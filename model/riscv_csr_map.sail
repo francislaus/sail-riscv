@@ -35,6 +35,8 @@ mapping clause csr_name_map = 0xC02  <-> "instret"
 mapping clause csr_name_map = 0xC80  <-> "cycleh"
 mapping clause csr_name_map = 0xC81  <-> "timeh"
 mapping clause csr_name_map = 0xC82  <-> "instreth"
+/* user pure data csrs */
+mapping clause csr_name_map = 0xC30  <-> "utid"
 /* TODO: other hpm counters */
 /* supervisor trap setup */
 mapping clause csr_name_map = 0x100  <-> "sstatus"

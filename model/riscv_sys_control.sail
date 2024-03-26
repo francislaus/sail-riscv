@@ -91,6 +91,9 @@ function is_CSR_defined (csr : csreg, p : Privilege) -> bool =
     /* user mode: Zkr */
     0x015 => haveZkr(),
 
+    /* user mode: utid */
+    0xC30 => haveUsrMode(),
+
     /* check extensions */
     _     => ext_is_CSR_defined(csr, p)
   }

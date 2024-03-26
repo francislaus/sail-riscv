@@ -680,6 +680,7 @@ register scause   : Mcause
 register stval    : xlenbits
 register stid     : xlenbits
 
+
 /*
  * S-mode address translation and protection (satp) layout.
  * The actual satp register is defined in an architecture-specific file.
@@ -766,6 +767,7 @@ function read_seed_csr() -> xlenbits = {
 
 /* Writes to the seed CSR are ignored */
 function write_seed_csr () -> option(xlenbits) = None()
+
 
 bitfield MEnvcfg : bits(64) = {
   // Supervisor TimeCmp Extension
